@@ -38,7 +38,7 @@ class HyperlinksParser extends Component {
 
   validateLinks() {
     const { htmlText } = this.state;
-    const linkRegexp = /<a\s*\w*href="(?<link>https?:\/\/(\w{3}\.)?\w+\.[\w.:/]*?)">(?<label>.*?)<\/a>/gim;
+    const linkRegexp = /<a\s*\w*href="(?<link>(https?:\/\/)?(\w{3}\.)?\w+\.[\w.:/]*?)">(?<label>.*?)<\/a>/gim;
 
     const linksSchema = string().matches(linkRegexp, { excludeEmptyString: true });
     linksSchema
